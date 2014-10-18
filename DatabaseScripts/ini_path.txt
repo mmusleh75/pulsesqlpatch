@@ -1,0 +1,3 @@
+medmas=ini\medmas.ini
+client2_medmas=ini\client2_medmas.ini
+client3_medmas=ini\client3_medmas.ini
