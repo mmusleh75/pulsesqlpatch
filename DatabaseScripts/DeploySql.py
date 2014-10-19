@@ -173,7 +173,6 @@ class Updater:
   def execute_sql(self, type, sql, dbname = ""):
     self.info(" - SQL: " + sql)
     errlvl = 0
-
     if type == "f":
         commandline = 'sqlcmd -S %s -d %s -U%s -P%s -i "%s"' % (self.db_server, dbname, self.db_user, self.db_password, sql)
     else:
@@ -203,7 +202,6 @@ class Updater:
       self.change(filename, "#IP#", self.ip) # TO-DO
 
   def process_dir(self, title, dirname):
-    #
     files = []
     files += [filename.lower() for filename in glob.glob(dirname + "/*.sql")]
     if files:
@@ -218,7 +216,7 @@ class Updater:
 #          continue
 
       self.change_static_vars(filename)
-      self.log("* File: " + basename, eol = False)
+      self.log("* SQL Patch: " + basename, eol = False)
       self.info(" + applying change:", eol = False)
       self.execute_sql("f", filename, self.db_name)
 
@@ -252,7 +250,10 @@ class Updater:
     self.process_dir("*** Processing patch files", "sqlpatches")
   def load_ini(self):
       found = 0
-      ini_path = tuple(open("ini_path.txt"))
+      cur_dir=os.path.dirname(__file__)
+      ini_file=os.path.join(cur_dir, "ini_path.txt")
+      ini_path = tuple(open(ini_file))
+
       for ini in ini_path:
           if ini.split('=')[0] == self.client:
               found = 1
@@ -298,4 +299,4 @@ class Updater:
     self.exit()
 
 if __name__ == "__main__":
-  Updater(sys.argv[1:]).run()
+    Updater(sys.argv[1:]).run()

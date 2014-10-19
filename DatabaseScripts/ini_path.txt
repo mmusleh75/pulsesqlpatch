@@ -1,3 +1,3 @@
-medmas=ini\medmas.ini
-client2_medmas=ini\client2_medmas.ini
-client3_medmas=ini\client3_medmas.ini
+medmas=c:\PulseSQLPatch\DatabaseScripts\ini\medmas.ini
+client2_medmas=c:\PulseSQLPatch\DatabaseScripts\ini\client2_medmas.ini
+client3_medmas=c:\PulseSQLPatch\DatabaseScripts\ini\client3_medmas.ini
