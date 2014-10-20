@@ -24,12 +24,8 @@ begin
 		alter table dbo.Step_Version_Info alter column Description varchar(255)
 	end
 
-	if (select count(1) from INFORMATION_SCHEMA.COLUMNS 
-	where TABLE_NAME = 'Step_Version_Info'
-	and COLUMN_NAME = 'exec_time_sec') = 0
-	begin
+	if (select count(1) from INFORMATION_SCHEMA.COLUMNS where TABLE_NAME = 'Step_Version_Info' and COLUMN_NAME = 'exec_time_sec') = 0
 		alter table Step_Version_Info add exec_time_sec float
-	end
 
 end
 go
@@ -42,11 +38,15 @@ begin
 		[MAJOR] [int] NULL,
 		[MINOR] [int] NULL,
 		[PATCH_LEVEL] [int] NULL,
+		[HotFix] int null,
 		[DATE] [varchar](8) NOT NULL
 	) 
 end
 ELSE
 BEGIN
+	if (select count(1) from INFORMATION_SCHEMA.COLUMNS where TABLE_NAME = 'VERSION_INFO' and COLUMN_NAME = 'HotFix') = 0
+		alter table VERSION_INFO add HotFix int
+
 	IF (SELECT COUNT(1) FROM SYS.indexes WHERE NAME = 'PK_VERSION_INFO_DATE') > 0
 		ALTER TABLE dbo.[VERSION_INFO] DROP CONSTRAINT [PK_VERSION_INFO_DATE]
 END

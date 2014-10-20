@@ -69,7 +69,8 @@ class Updater:
         version_array=file_array[0].split('.')
         major=(version_array[0]+"."+version_array[1])[11:]
         num_major=major[:1]
-        minor=version_array[2]
+        minor=version_array[1]
+        patch=version_array[2]
         hotfix=version_array[3]
         full_version=(version_array[0]+"."+version_array[1]+"."+version_array[2]+"."+version_array[3])[11:]
         seq=file_array[1]
@@ -77,8 +78,8 @@ class Updater:
 
         sql1=" IF NOT EXISTS (SELECT 1 FROM VERSION_INFO WHERE [DATE]=CONVERT(VARCHAR(8),GETDATE(),112) AND VERSION = 'V"+full_version+"')" \
         " BEGIN " \
-        " INSERT VERSION_INFO ([version],[major],[minor],[patch_level],[date])" \
-        " VALUES('V"+full_version+"','"+num_major+"','"+minor+"','"+hotfix+"',CONVERT(VARCHAR(8),GETDATE(),112)) " \
+        " INSERT VERSION_INFO ([version],[major],[minor],[patch_level],[HotFix],[date])" \
+        " VALUES('V"+full_version+"','"+num_major+"','"+minor+"','"+patch+"','"+hotfix+"',CONVERT(VARCHAR(8),GETDATE(),112)) " \
         " END"
 
         sql2="if not exists (select 1 from step_version_info where description='"+patch_name+"' and CONVERT(VARCHAR(8),[date],112)=CONVERT(VARCHAR(8),GETDATE(),112))	" \
