@@ -248,6 +248,7 @@ class Updater:
   def process_all_dirs(self):
     self.load_base_data()
 ###    self.process_subdir("*** Processing patch files", "sqlpatches")
+    self.process_dir("*** Processing hotfixes", "hotfixes")
     self.process_dir("*** Processing patch files", "sqlpatches")
   def load_ini(self):
       found = 0
