@@ -1,0 +1,57 @@
+*** Processing prereqs
+* SQL Patch: 001_add_version_tables.sql
+   1.093 s
+*** Processing hotfixes
+* SQL Patch: 5.0.00.00_001_12328_createnewtable.sql
+   0.451 s
+*** Processing patch files
+* SQL Patch: 5.0.00.00_001_12321_createnewtable.sql
+   0.124 s
+** Saving [5.0.00.00_001_12321_createnewtable.sql] in VERSION_INFO table
+   0.092 s
+** Saving [5.0.00.00_001_12321_createnewtable.sql] in STEP_VERSION_INFO table
+   0.126 s
+* SQL Patch: 5.0.00.00_002_99099_new function.sql
+   0.131 s
+** Saving [5.0.00.00_002_99099_new function.sql] in VERSION_INFO table
+   0.072 s
+** Saving [5.0.00.00_002_99099_new function.sql] in STEP_VERSION_INFO table
+   0.092 s
+* SQL Patch: 5.0.00.00_003_11293_new_procedure.sql
+   0.079 s
+** Saving [5.0.00.00_003_11293_new_procedure.sql] in VERSION_INFO table
+   0.072 s
+** Saving [5.0.00.00_003_11293_new_procedure.sql] in STEP_VERSION_INFO table
+   0.071 s
+* SQL Patch: 5.0.00.01_004_44432_new_view.sql
+   0.082 s
+** Saving [5.0.00.01_004_44432_new_view.sql] in VERSION_INFO table
+   0.084 s
+** Saving [5.0.00.01_004_44432_new_view.sql] in STEP_VERSION_INFO table
+   0.077 s
+* SQL Patch: 5.0.00.02_005_29931_new_view2.sql
+   0.095 s
+** Saving [5.0.00.02_005_29931_new_view2.sql] in VERSION_INFO table
+   0.074 s
+** Saving [5.0.00.02_005_29931_new_view2.sql] in STEP_VERSION_INFO table
+   0.083 s
+* SQL Patch: 5.0.01.01_006_29941_new_view2_2.sql
+   0.082 s
+** Saving [5.0.01.01_006_29941_new_view2_2.sql] in VERSION_INFO table
+   0.068 s
+** Saving [5.0.01.01_006_29941_new_view2_2.sql] in STEP_VERSION_INFO table
+   0.071 s
+* SQL Patch: 5.0.01.02_007_29941_new_view2_2_2.sql
+   0.070 s
+** Saving [5.0.01.02_007_29941_new_view2_2_2.sql] in VERSION_INFO table
+   0.072 s
+** Saving [5.0.01.02_007_29941_new_view2_2_2.sql] in STEP_VERSION_INFO table
+   0.072 s
+* SQL Patch: 5.0.02.01_008_29941_new_view2_3.sql
+   0.100 s
+** Saving [5.0.02.01_008_29941_new_view2_3.sql] in VERSION_INFO table
+   0.074 s
+** Saving [5.0.02.01_008_29941_new_view2_3.sql] in STEP_VERSION_INFO table
+   0.075 s
+Exec Time =>   3.593 s
+*** FINISHED. Overall result: PASS
